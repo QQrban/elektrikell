@@ -2,7 +2,8 @@ import './App.scss';
 import Container from 'react-bootstrap/Container';
 import NavbarComponent from './NavBar';
 import PriceHeader from './PriceHeader';
-import FooterComponent from './Footer'
+import FooterComponent from './Footer';
+import FooterHighPrice from './FooterHighPrice';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
                 <div className="chart mb-2"></div>
             </Container>
         </div>
-        <FooterComponent/>
+            <FooterComponent />
+            {/* <FooterHighPrice /> */}
     </>
   );
 }
