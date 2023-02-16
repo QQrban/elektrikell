@@ -1,7 +1,7 @@
 import { Button } from "react-bootstrap";
 import { ButtonGroup } from "react-bootstrap";
 
-function selectPriceType({activePrice, setActivePrice}) {
+function selectPriceType({ activePrice, setActivePrice }) {
     return (
         <>
             <ButtonGroup aria-label="Basic example">

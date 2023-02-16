@@ -1,9 +1,9 @@
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-function ErrorModal({show, handleClose, errorMessage}) {
+function ErrorModal({ show, handleClose, errorMessage }) {
     return (
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={!!errorMessage} onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>Error</Modal.Title>
             </Modal.Header>
