@@ -19,6 +19,7 @@ function App() {
     <>
         <div className="container-wrapper pb-2">
             <Container>
+              
                 <NavBar/>
                 <PriceHeader activePrice={activePrice} setActivePrice={setActivePrice}/>
                 <Body/>
