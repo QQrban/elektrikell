@@ -12,8 +12,6 @@ function Body() {
     useEffect(() => {
         getPriceData()
             .then(({ data, success, messages }) => {
-                console.log(data.ee);
-
                 if (!success) {
                     throw messages[0];
                 }
@@ -23,7 +21,7 @@ function Body() {
                         price: d.price,
                         hour: moment.unix(d.timestamp).hours()
                     }
-                    
+
                 });
                 setData(newData)
             })
@@ -31,7 +29,7 @@ function Body() {
                 setErrorMessage(err.toString());
             });
     }, []);
-       
+
     return (
         <>
             <ResponsiveContainer width="95%" height={400}>

@@ -9,7 +9,7 @@ function NavBar() {
     <Navbar bg="light" expand="lg" className="mb-2">
       <Container>
         <Navbar.Brand href="#home">
-          <AddLogo/>Elektrikell
+          <AddLogo />Elektrikell
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" c>
