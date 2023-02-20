@@ -21,7 +21,7 @@ function PriceHeader(props) {
         </Col>
         <Col className='text-end fw-light'>
           <ElektriHind/>
-          €/MWh
+          senti / kilovatt-tund
         </Col>
       </Row>
   );
