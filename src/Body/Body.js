@@ -4,7 +4,6 @@ import { getPriceData } from "../services/apiService";
 import ErrorModal from "../ErrorModal";
 import moment from "moment";
 
-
 function Body() {
     const [data, setData] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);

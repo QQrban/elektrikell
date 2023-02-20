@@ -7,15 +7,11 @@ function ElektriHind() {
     const [data, setData] = useState([]);
     useEffect(() => {
         getCurrentPrice()
-            .then(price => {
-                if (Object.keys(price)[0] !== 'success') {
+            .then(({ success, data, price }) => {
+                if (!success) {
                     throw new Error(price.messages[0])
-
                 }
-                const currentHind = price.data.map(e => {
-                    return e.price
-                });
-                setData(currentHind)
+                setData(data[0].price)
             })
             .catch(err => {
                 setErrorMessage(err.toString());
