@@ -4,12 +4,12 @@ import ErrorModal from "../ErrorModal";
 
 function ElektriHind() {
     const [errorMessage, setErrorMessage] = useState(null);
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(0);
     useEffect(() => {
         getCurrentPrice()
-            .then(({ success, data, price }) => {
+            .then(({ success, data, messages }) => {
                 if (!success) {
-                    throw new Error(price.messages[0])
+                    throw new Error(messages[0])
                 }
                 setData(data[0].price)
             })
