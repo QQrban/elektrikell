@@ -15,20 +15,20 @@ function App() {
 
   return (
     <>
-        <div className="container-wrapper pb-2">
-            <Container>
-                <NavBar/>
-                <PriceHeader activePrice={activePrice} setActivePrice={setActivePrice}/>
-                <Body hourRange={hourRange}  activePrice={activePrice} setLowPriceTimestamp={setLowPriceTimestamp}/>
-            </Container>
-        </div>
-        {activePrice === 'low' ? 
-        <FooterLowPrice hourRange={hourRange} 
-        setHourRange={setHourRange} 
-        lowPriceTimestamp={lowPriceTimestamp}
-        /> 
+      <div className="container-wrapper pb-2">
+        <Container>
+          <NavBar />
+          <PriceHeader activePrice={activePrice} setActivePrice={setActivePrice} />
+          <Body hourRange={hourRange} activePrice={activePrice} setLowPriceTimestamp={setLowPriceTimestamp} />
+        </Container>
+      </div>
+      {activePrice === 'low' ?
+        <FooterLowPrice hourRange={hourRange}
+          setHourRange={setHourRange}
+          lowPriceTimestamp={lowPriceTimestamp}
+        />
         : <FooterHighPrice />}
-        {lowPriceTimestamp && <Loading/>}
+      {!lowPriceTimestamp && <Loading />}
     </>
   );
 }
