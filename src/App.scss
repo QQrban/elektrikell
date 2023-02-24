@@ -2,6 +2,7 @@
 
 body {
     background-color: $blue-100;
+    position: relative;
 }
 
 .container-wrapper {
@@ -23,9 +24,19 @@ body {
     background-color: rgba(252, 226, 228, 0.75);
 }
 
+
+
 .loading {
-    background-color: $blue-100;
-    height: 100vh;
-    z-index: 10;
-    
+    background-color: white;
+    z-index: 55;
+}
+
+.text-kell {
+    font-size: 52px;
+    letter-spacing: 2.5px;
+    font-variant: small-caps;
+}
+
+.spinner {
+    scale: 3;
 }

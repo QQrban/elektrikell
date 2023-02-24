@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
-import { 
-    LineChart, 
-    CartesianGrid, 
-    XAxis, 
-    Tooltip, 
-    YAxis, 
-    Legend, 
-    Line, 
+import {
+    LineChart,
+    CartesianGrid,
+    XAxis,
+    Tooltip,
+    YAxis,
+    Legend,
+    Line,
     ResponsiveContainer,
     ReferenceArea,
-    ReferenceDot,
-    ReferenceLine } from "recharts";
+    ReferenceLine
+} from "recharts";
 import { getPriceData } from "../services/apiService";
 import ErrorModal from "../ErrorModal";
 import moment from "moment";
@@ -34,6 +34,7 @@ function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
                         hour: moment.unix(d.timestamp).hours(),
                         current: moment().isSame(moment.unix(d.timestamp), 'hour'),
                     }
+
                 });
                 setData(newData)
             })
@@ -54,12 +55,12 @@ function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
                 const range = arr.slice(i, i + hourRangeLocal);
                 if (range.length === hourRangeLocal) {
                     let sum = 0;
-                    range.forEach(v => sum+= v.price);
-                    rangePrices.push({sum, i, timestamp: v.timestamp})
+                    range.forEach(v => sum += v.price);
+                    rangePrices.push({ sum, i, timestamp: v.timestamp })
                 }
-            })                
-    
-            rangePrices.sort((a, b) => a.sum -b.sum)
+            })
+
+            rangePrices.sort((a, b) => a.sum - b.sum)
             if (activePrice === 'low') {
                 setX1(rangePrices[0].i)
                 setLowPriceTimestamp(rangePrices[0].timestamp);
@@ -69,13 +70,12 @@ function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
                 let sum = 0;
                 const half = rangePrices.slice(0, rangePrices.length / 2);
                 half.forEach(price => {
-                    sum+=price.sum
+                    sum += price.sum
                 })
                 let average = sum / half.length;
                 setXHigh(half.filter(v => v.sum > average))
             }
         }
-
     }, [hourRange, data, activePrice, setLowPriceTimestamp]);
 
     return (
@@ -85,11 +85,10 @@ function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="hour" />
                     <YAxis />
-                    <ReferenceLine x={data.findIndex(e => e.current)} stroke="red"/>
-                    <ReferenceDot x={data.findIndex(e => e.current)} y={14.8}  stroke="red"/>
-                    {xHigh.length ? xHigh.map (x => (
-                        <ReferenceArea key={x.i} x1={x.i + 10} x2={x.i + 10 + 1} fill="red" fillOpacity={0.10}/>
-                    )) : <ReferenceArea x1={x1 + 10} x2={x1 + hourRange + 10} fill="green" fillOpacity={0.10}/>}
+                    <ReferenceLine label={{ value: `kell ${moment().format('HH:mm')}`, position: 'right', fill: 'red' }} x={data.findIndex(e => e.current)} stroke="red" />
+                    {xHigh.length ? xHigh.map(x => (
+                        <ReferenceArea key={x.i} x1={x.i + 10} x2={x.i + 10 + 1} fill="red" fillOpacity={0.10} />
+                    )) : <ReferenceArea x1={x1 + 10} x2={x1 + hourRange + 10} fill="green" fillOpacity={0.10} />}
                     <Tooltip />
                     <Legend />
                     <Line type="monotone" dataKey="price" stroke="#0275d8" />
