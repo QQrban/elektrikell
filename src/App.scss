@@ -24,8 +24,6 @@ body {
     background-color: rgba(252, 226, 228, 0.75);
 }
 
-
-
 .loading {
     background-color: white;
     z-index: 55;
@@ -35,8 +33,10 @@ body {
     font-size: 52px;
     letter-spacing: 2.5px;
     font-variant: small-caps;
+    z-index: 55;
 }
 
 .spinner {
     scale: 3;
 }
+

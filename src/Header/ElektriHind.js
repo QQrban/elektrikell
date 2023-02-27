@@ -12,6 +12,8 @@ function ElektriHind() {
                     throw new Error(messages[0])
                 }
                 setData(+((data[0].price) / 10 * 1.2).toFixed(2))
+                console.log(((data[0].price) / 10 * 1.2).toFixed(2));
+                
             })
             .catch(err => {
                 setErrorMessage(err.toString());
