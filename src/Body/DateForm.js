@@ -20,7 +20,6 @@ function DateForm({ show, setShow, setSearchDate, setErrorMessage }) {
             end: moment(end).format(),
             pastHours: moment().diff(moment(start), 'hours')
         });
-
     }
 
     return (

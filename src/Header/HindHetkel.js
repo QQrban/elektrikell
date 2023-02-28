@@ -21,9 +21,15 @@ function HindHetkel() {
     }, [data])
 
     return (
-        <>
-            <span style={(data >= 10) ? { backgroundColor: 'rgba(252, 226, 228, 0.75)', color: 'red' } : { backgroundColor: 'rgb(209,231,221)', color: 'darkgreen' }} className="rounded-2 d-block ps-2 nav-hind">{text}</span>
-        </>
+        <div className="d-flex align-center">
+            <span style={(data >= 10) ?
+                { backgroundColor: 'rgba(252, 226, 228, 0.75)', color: 'red' }
+                :
+                { backgroundColor: 'rgb(209,231,221)', color: 'darkgreen' }}
+                className="rounded-2 d-block p-1 nav-hind text-center">
+                {text}
+            </span>
+        </div>
     )
 }
 
