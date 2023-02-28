@@ -6,6 +6,7 @@ import HindHetkel from './HindHetkel';
 import ElektriHind from './ElektriHind';
 
 function PriceHeader(props) {
+  
   return (
       <Row className='mb-2 d-flex align-items-center'>
         

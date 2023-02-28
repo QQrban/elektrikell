@@ -1,21 +1,13 @@
 import { getCurrentPrice } from "../services/apiService";
 import { useEffect, useState } from "react";
 import ErrorModal from "../ErrorModal";
+import { currentPrice } from "../services/apiService";
 
 function ElektriHind() {
     const [errorMessage, setErrorMessage] = useState(null);
     const [data, setData] = useState(0);
     useEffect(() => {
-        getCurrentPrice()
-            .then(({ success, data, messages }) => {
-                if (!success) {
-                    throw new Error(messages[0])
-                }
-                setData(+((data[0].price) / 10 * 1.2).toFixed(2))
-            })
-            .catch(err => {
-                setErrorMessage(err.toString());
-            })
+        currentPrice(getCurrentPrice, setData, setErrorMessage)
     }, [])
     return (
         <>

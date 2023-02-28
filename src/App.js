@@ -16,8 +16,8 @@ function App() {
   return (
     <>
       <div className="container-wrapper pb-2">
-        <Container>
-          <NavBar />
+        <NavBar />
+        <Container style={{ paddingTop: '100px' }}>
           <PriceHeader activePrice={activePrice} setActivePrice={setActivePrice} />
           <Body hourRange={hourRange} activePrice={activePrice} setLowPriceTimestamp={setLowPriceTimestamp} />
         </Container>

@@ -1,8 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: $blue-100;
+    background-color: $green-100;
     position: relative;
+}
+body.high {
+    background-color: $red-100;
 }
 
 .container-wrapper {
@@ -16,15 +19,14 @@ body {
 }
 
 .navbar-brand {
-    color: $primary;
+    color: $green-400;
     font-size: 32px;
 }
 
 .nav-hind {
     background-color: rgba(252, 226, 228, 0.75);
+    width: 65px;
 }
-
-
 
 .loading {
     background-color: white;
@@ -35,8 +37,16 @@ body {
     font-size: 52px;
     letter-spacing: 2.5px;
     font-variant: small-caps;
+    z-index: 55;
 }
 
 .spinner {
     scale: 3;
 }
+
+.logo {
+    scale: 2;
+    margin-right: 10px;
+}
+
+
