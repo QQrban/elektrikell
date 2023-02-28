@@ -82,7 +82,7 @@ function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
                     <YAxis />
                     <ReferenceLine className="line" label={{ value: `kell ${moment().format('HH:mm')}`, position: 'insideTopLeft', fill: 'red' }} x={data.findIndex(e => e.current)} stroke="red" />
                     {activePrice === 'high' ?
-                        AreaHigh({ rangePrices })
+                        AreaHigh({ rangePrices }) 
                         :
                         AreaLow({ hourRange, setLowPriceTimestamp, rangePrices, searchDate })
                     }
@@ -90,8 +90,8 @@ function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
                     <Line type="monotone" dataKey="price" stroke="#0275d8" />
                 </LineChart>
             </ResponsiveContainer>
-            <div className="text-center ">
-                <Button variant="outline-secondary" onClick={() => setShowForm(true)}>Määra kuupäevad</Button>
+            <div className="text-center">
+                <Button className="text-white" variant="warning" onClick={() => setShowForm(true)}>Määra kuupäevad</Button>
             </div>
             <DateForm
                 show={showForm}

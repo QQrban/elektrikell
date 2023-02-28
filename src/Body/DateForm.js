@@ -37,7 +37,7 @@ function DateForm({ show, setShow, setSearchDate }) {
                             <Form.Label>End date</Form.Label>
                             <Form.Control name="end" type="datetime-local" placeholder="end date" />
                         </Form.Group>
-                        <Button variant="outline-secondary" type="submit" className="w-100">
+                        <Button variant="success" type="submit" className="w-100">
                             Submit
                         </Button>
                     </Form>

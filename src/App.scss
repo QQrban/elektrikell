@@ -1,8 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: $blue-100;
+    background-color: $green-100;
     position: relative;
+}
+body.high {
+    background-color: $red-100;
 }
 
 .container-wrapper {
