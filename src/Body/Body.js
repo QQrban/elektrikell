@@ -96,6 +96,7 @@ function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
                 <Button className="text-white" variant="warning" onClick={() => setShowForm(true)}>Määra kuupäevad</Button>
             </div>
             <DateForm
+                setErrorMessage={setErrorMessage}
                 show={showForm}
                 setShow={setShowForm}
                 setSearchDate={setSearchDate}
