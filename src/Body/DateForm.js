@@ -11,7 +11,7 @@ function DateForm({ show, setShow, setSearchDate, setErrorMessage }) {
         event.preventDefault();
         const start = event.target.start.value;
         const end = event.target.end.value;
-        if (start >= moment().format() || end <= moment().format()) {
+        if (moment().diff(start) < 0 || moment().diff(end) > 0) {
             setErrorMessage(`'Alguskuupäev' peab olema minevikus ja 'Lõppkuupäev' peab olema tulevikus`);
             return false;
         }

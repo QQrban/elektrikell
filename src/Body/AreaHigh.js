@@ -15,7 +15,7 @@ const AreaHigh = ({ rangePrices }) => {
         });
         let average = sum / half.length;
         setXHigh(half.filter(v => v.sum > average));
-
+        
     }, [rangePrices]);
 
 

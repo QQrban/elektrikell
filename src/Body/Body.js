@@ -70,7 +70,6 @@ function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
 
             rangePricez.sort((a, b) => a.sum - b.sum);
             setRangePrices(rangePricez);
-            console.log(data.findIndex(e => e.current));
 
         }
     }, [hourRange, data, activePrice]);
