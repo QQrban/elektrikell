@@ -24,7 +24,6 @@ const end = moment().add(30, 'hours').format();
 function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
     const [data, setData] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
-    const [rangePrices, setRangePrices] = useState(null);
     const [showForm, setShowForm] = useState(false);
     const [searchDate, setSearchDate] = useState({
         start, end, pastHours
@@ -51,28 +50,6 @@ function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
             });
     }, [searchDate]);
 
-    useEffect(() => {
-        if (data.length) {
-            const timeStampNow = moment().unix();
-            const futureData = data.filter(e => e.timestamp > timeStampNow)
-
-            const hourRangeLocal = activePrice === 'low' ? hourRange : 1;
-
-            const rangePricez = []
-            futureData.forEach((v, i, arr) => {
-                const range = arr.slice(i, i + hourRangeLocal);
-                if (range.length === hourRangeLocal) {
-                    let sum = 0;
-                    range.forEach(v => sum += v.price);
-                    rangePricez.push({ sum, i, timestamp: v.timestamp })
-                }
-            });
-
-            rangePricez.sort((a, b) => a.sum - b.sum);
-            setRangePrices(rangePricez);
-
-        }
-    }, [hourRange, data, activePrice]);
 
     return (
         <>
@@ -81,11 +58,11 @@ function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="hour" />
                     <YAxis />
-                    <ReferenceLine className="line" x={data.findIndex(e => e.current)} stroke="red" />
+                    <ReferenceLine className="line" x={data?.findIndex(e => e.current)} stroke="red" />
                     {activePrice === 'high' ?
-                        AreaHigh({ rangePrices })
+                        AreaHigh({ data })
                         :
-                        AreaLow({ hourRange, setLowPriceTimestamp, rangePrices, searchDate })
+                        AreaLow({ data, hourRange, setLowPriceTimestamp, searchDate })
                     }
                     <Tooltip />
                     <Line type="monotone" dataKey="price" stroke="#0275d8" />

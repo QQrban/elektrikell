@@ -8,6 +8,7 @@ body.high {
     background-color: $red-100;
 }
 
+
 .container-wrapper {
     background-color: #fff;
 }
@@ -18,12 +19,24 @@ body.high {
     background-color: $secondary;
 }
 
+a {
+    // text-decoration: none;
+    // color: inherit;
+    &:hover {
+        color: inherit;
+    }
+}
+
 .navbar-brand {
     color: $green-400;
     font-size: 32px;
 }
 
-
+.btn-outline-success {
+    &:hover {
+        color: white !important;
+    }
+}
 
 .loading {
     background-color: white;
@@ -45,3 +58,10 @@ body.high {
     scale: 2;
     margin-right: 10px;
 }
+
+@media (max-width: 442px) {
+    .about {
+        margin-top: 100px !important;
+    }
+}
+

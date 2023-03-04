@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react";
 import { ReferenceArea } from "recharts";
+import { rangePricesGenerator } from "../helpers/rangePrices";
 
-const AreaLow = ({ hourRange, setLowPriceTimestamp, rangePrices, searchDate }) => {
-    const [x, setX] = useState(0);
+const AreaLow = ({ hourRange, setLowPriceTimestamp, searchDate, data }) => {
+    const [x, setX] = useState(null);
     document.querySelector('body').classList.remove('high')
-    
+
     useEffect(() => {
-        if (!rangePrices) return;
-        setX(rangePrices[0].i)
+        if (!data.length) return;
+
+        const rangePrices = rangePricesGenerator(data, hourRange);
+
+        setX(rangePrices[0].i);
         setLowPriceTimestamp(rangePrices[0].timestamp);
-    }, [rangePrices, setLowPriceTimestamp]);
+    }, [setLowPriceTimestamp, data, hourRange]);
 
     return (
         <>
