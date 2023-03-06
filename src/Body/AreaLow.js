@@ -2,10 +2,16 @@ import { useState, useEffect } from "react";
 import { ReferenceArea } from "recharts";
 import { rangePricesGenerator } from "../helpers/rangePrices";
 import { ResponsiveContainer, LineChart } from "recharts";
+import { useSelector, useDispatch } from "react-redux";
+import { setLowPriceTimestamp } from '../services/stateService'
 
-const AreaLow = ({ hourRange, setLowPriceTimestamp, searchDate, data, children }) => {
+const AreaLow = ({searchDate, data, children }) => {
     const [x, setX] = useState(null);
     document.querySelector('body').classList.remove('high')
+
+
+    const hourRange = useSelector((state) => state.hourRange);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (!data) return;
@@ -13,8 +19,8 @@ const AreaLow = ({ hourRange, setLowPriceTimestamp, searchDate, data, children }
         const rangePrices = rangePricesGenerator(data, hourRange);
 
         setX(rangePrices[0].i);
-        setLowPriceTimestamp(rangePrices[0].timestamp);
-    }, [setLowPriceTimestamp, data, hourRange]);
+        dispatch(setLowPriceTimestamp(rangePrices[0].timestamp));
+    }, [data, hourRange, dispatch]);
 
     return (
         <>

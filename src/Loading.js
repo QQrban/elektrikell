@@ -1,7 +1,12 @@
 import Spinner from 'react-bootstrap/Spinner';
 import Container from 'react-bootstrap/Container';
+import { useSelector } from 'react-redux';
 
 function Loading() {
+
+    const lowPriceTimestamp = useSelector(state => state.lowPriceTimestamp);
+
+    if (lowPriceTimestamp) return null;
     return (
         <div className="loading position-fixed w-100 h-100 top-0 d-flex">
             <Container className='d-flex gap-5 flex-column align-items-center justify-content-center'>
