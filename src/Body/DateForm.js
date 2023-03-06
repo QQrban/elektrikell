@@ -18,7 +18,7 @@ function DateForm({ show, setShow, setSearchDate, setErrorMessage }) {
         }
         
         let oneDay = 86400000; //milliseconds in one day
-        if (moment(end).diff(start) < oneDay) {
+        if (moment(end).diff(start) <= oneDay) {
             setErrorMessage(`'Alguskuupäeva' ja 'Lõppkuupäeva' vahe peab olema vähemalt 1 päev`);
             return false;
         }

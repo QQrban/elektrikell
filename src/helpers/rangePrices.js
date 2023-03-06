@@ -5,7 +5,7 @@ export const rangePricesGenerator = (data, hourRange = 1,) => {
         const timeStampNow = moment().unix();
         const futureData = data.filter(e => e.timestamp > timeStampNow)
 
-        const hourRangeLocal = hourRange;
+        const hourRangeLocal = hourRange + 1;
 
         const rangePricez = []
         futureData.forEach((v, i, arr) => {

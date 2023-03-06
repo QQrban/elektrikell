@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import {
-    LineChart,
     CartesianGrid,
     XAxis,
     Tooltip,
     YAxis,
     Line,
-    ResponsiveContainer,
     ReferenceLine
 } from "recharts";
 import { getPriceData } from "../services/apiService";
@@ -22,7 +20,7 @@ const start = moment().subtract(pastHours, 'hours').format();
 const end = moment().add(30, 'hours').format();
 
 function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
     const [showForm, setShowForm] = useState(false);
     const [searchDate, setSearchDate] = useState({
@@ -50,24 +48,29 @@ function Body({ hourRange, activePrice, setLowPriceTimestamp }) {
             });
     }, [searchDate]);
 
+    
+    const chartsChildren = (
+        <>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="hour" />
+            <YAxis />
+            <Line type="monotone" dataKey="price" stroke="#0275d8" />
+            <Tooltip />
+            <ReferenceLine className="line" x={data?.findIndex(e => e.current)} stroke="red" />
+        </>
+    )
 
     return (
         <>
-            <ResponsiveContainer width="95%" height={400}>
-                <LineChart data={data}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="hour" />
-                    <YAxis />
-                    <ReferenceLine className="line" x={data?.findIndex(e => e.current)} stroke="red" />
-                    {activePrice === 'high' ?
-                        AreaHigh({ data })
-                        :
-                        AreaLow({ data, hourRange, setLowPriceTimestamp, searchDate })
-                    }
-                    <Tooltip />
-                    <Line type="monotone" dataKey="price" stroke="#0275d8" />
-                </LineChart>
-            </ResponsiveContainer>
+            {activePrice === 'high' ?
+                <AreaHigh data={data}>
+                    {chartsChildren}
+                </AreaHigh>
+                :
+                <AreaLow {...{ data, hourRange, setLowPriceTimestamp, searchDate }}>
+                    {chartsChildren}
+                </AreaLow>
+            }
             <div className="text-center">
                 <Button className="text-white" variant="warning" onClick={() => setShowForm(true)}>Määra kuupäevad</Button>
             </div>

@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import { ReferenceArea } from "recharts";
+import { ReferenceArea, LineChart, ResponsiveContainer } from "recharts";
 import { rangePricesGenerator } from "../helpers/rangePrices";
 
-const AreaHigh = ({ data }) => {
+const AreaHigh = ({ data, children }) => {
     const [xHigh, setXHigh] = useState(null);
     document.querySelector('body').classList.add('high')
 
+
     useEffect(() => {
-        if (!data.length) return;
+        if (!data) return;
 
         const rangePrices = rangePricesGenerator(data)
         rangePrices.reverse();
@@ -17,14 +18,28 @@ const AreaHigh = ({ data }) => {
             sum += price.sum;
         });
         let average = sum / half.length;
+        console.log(average);
+        console.log(half.filter(v => v.sum > average));
+        
         setXHigh(half.filter(v => v.sum > average));
-
     }, [data]);
-
-
-    return xHigh.length ? xHigh.map(x =>
-        <ReferenceArea key={x.i} x1={x.i + 10} x2={x.i + 10 + 1} fill="red" fillOpacity={0.10} />
-    ) : null;
+    
+    const currentIndex = data?.findIndex(e => e.current);
+    return (
+        <ResponsiveContainer width="95%" height={400}>
+        <LineChart data={data}>
+            {children}
+            {xHigh?.length ? xHigh.map(x =>
+        <ReferenceArea 
+            key={x.i} 
+            x1={x.i + currentIndex} 
+            x2={x.i + currentIndex + 1} 
+            fill="red" 
+            fillOpacity={0.10} />
+    ) : null}
+        </LineChart>
+    </ResponsiveContainer>
+    )
 }
 
 export default AreaHigh;
