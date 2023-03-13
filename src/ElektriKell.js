@@ -11,7 +11,7 @@ import ErrorModal from './ErrorModal';
 function Elektrikell() {
     
     const activePrice = useSelector(state => state.activePrice);
-
+    
     return (
         <>
             <div className="container-wrapper pb-2">

@@ -1,7 +1,7 @@
-import { Button } from "react-bootstrap";
-import { ButtonGroup } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
-import { setActivePrice } from "../services/stateService";
+import { Button } from 'react-bootstrap';
+import { ButtonGroup } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { setActivePrice } from '../services/stateService';
 
 function SelectPriceType() {
 

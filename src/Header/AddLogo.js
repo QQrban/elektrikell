@@ -8,5 +8,4 @@ function AddLogo() {
     )
 }
 
-
 export default AddLogo;

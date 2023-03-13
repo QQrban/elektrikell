@@ -5,12 +5,15 @@ import Elektrikell from './ElektriKell';
 import NavBar from './Header/NavBar';
 
 const App = () => {
+  
+  
   return (
     <>
       <NavBar />
       <Routes>
         <Route path='/' element={<Elektrikell />} />
         <Route path='/:activePrice' element={<Elektrikell />} />
+        <Route path='/low/:hour' element={<Elektrikell />} />
         <Route path='/about' element={<About />} />
       </Routes>
     </>

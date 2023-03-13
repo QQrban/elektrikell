@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import {
     CartesianGrid,
     XAxis,
@@ -6,16 +6,16 @@ import {
     YAxis,
     Line,
     ReferenceLine
-} from "recharts";
-import { getPriceData } from "../services/apiService";
-import ErrorModal from "../ErrorModal";
-import moment from "moment";
-import AreaLow from "./AreaLow";
-import AreaHigh from "./AreaHigh";
-import Button from "react-bootstrap/esm/Button";
-import DateForm from "./DateForm";
-import {  useSelector, useDispatch } from "react-redux";
-import { setErrorMessage } from "../services/stateService";
+} from 'recharts';
+import {  useSelector, useDispatch } from 'react-redux';
+import moment from 'moment';
+import Button from 'react-bootstrap/esm/Button';
+import { getPriceData } from '../services/apiService';
+import { setErrorMessage } from '../services/stateService';
+import ErrorModal from '../ErrorModal';
+import AreaLow from './AreaLow';
+import AreaHigh from './AreaHigh';
+import DateForm from './DateForm';
 
 const pastHours = 10;
 const start = moment().subtract(pastHours, 'hours').format();
@@ -28,13 +28,14 @@ function Body() {
         start, end, pastHours
     });
 
-    const activePrice = useSelector(state => state.activePrice)
-    const dispatch = useDispatch()
+    const activePrice = useSelector(state => state.activePrice);
+    const dispatch = useDispatch();
 
 
     useEffect(() => {
         getPriceData(searchDate)
             .then(({ data, success, messages }) => {
+                
                 if (!success) {
                     throw messages[0];
                 }

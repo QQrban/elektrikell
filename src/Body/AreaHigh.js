@@ -4,16 +4,16 @@ import { rangePricesGenerator } from "../helpers/rangePrices";
 
 const AreaHigh = ({ data, children }) => {
     const [xHigh, setXHigh] = useState(null);
-    document.querySelector('body').classList.add('high')
-
-
+    const currentIndex = data?.findIndex(e => e.current);
+    
+    
     useEffect(() => {
+        document.querySelector('body').classList.add('high');
         if (!data) return;
 
         const rangePrices = rangePricesGenerator(data)
         rangePrices.reverse();
         let sum = 0;
-        console.log(rangePrices[0].i);
         
         const half = rangePrices.slice(0, rangePrices.length / 2);
         half.forEach(price => {
@@ -23,7 +23,6 @@ const AreaHigh = ({ data, children }) => {
         setXHigh(half.filter(v => v.sum > average));
     }, [data]);
     
-    const currentIndex = data?.findIndex(e => e.current);
     
     return (
         <ResponsiveContainer width="95%" height={400}>

@@ -1,4 +1,4 @@
-import { configureStore, createAction, createReducer } from "@reduxjs/toolkit";
+import { configureStore, createAction, createReducer } from '@reduxjs/toolkit';
 
 const initialState = {
     hourRange: 1,
