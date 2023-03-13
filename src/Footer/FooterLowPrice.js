@@ -4,11 +4,14 @@ import Countdown from 'react-countdown';
 import moment from 'moment';
 import { useSelector } from 'react-redux';
 
-function FooterLowPrice(props) {
-    const timeFrom = moment(props.lowPriceTimestamp * 1000).format('HH:mm');
-    const seconds = props.hourRange * 3600;
-    const timeTo = moment((props.lowPriceTimestamp + seconds) * 1000).format('HH:mm');
-    const lowPriceTimestamp = useSelector((state) => state.lowPriceTimestamp)
+function FooterLowPrice() {
+
+    const lowPriceTimestamp = useSelector((state) => state.lowPriceTimestamp);
+    const hourRange = useSelector((state) => state.hourRange);
+    const seconds = hourRange * 3600;
+    const timeFrom = moment(lowPriceTimestamp * 1000).format('HH:mm');
+    const timeTo = moment((lowPriceTimestamp + seconds) * 1000).format('HH:mm');
+
     return (
         <Container className="text-center mt-3 fw-light">
             <div className='fs-2 mb-1'>Tahan tarbida</div>

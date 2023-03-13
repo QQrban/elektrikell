@@ -14,18 +14,22 @@ import AreaLow from "./AreaLow";
 import AreaHigh from "./AreaHigh";
 import Button from "react-bootstrap/esm/Button";
 import DateForm from "./DateForm";
+import {  useSelector, useDispatch } from "react-redux";
+import { setErrorMessage } from "../services/stateService";
 
 const pastHours = 10;
 const start = moment().subtract(pastHours, 'hours').format();
 const end = moment().add(30, 'hours').format();
 
-function Body({ activePrice }) {
+function Body() {
     const [data, setData] = useState(null);
-    const [errorMessage, setErrorMessage] = useState(null);
     const [showForm, setShowForm] = useState(false);
     const [searchDate, setSearchDate] = useState({
         start, end, pastHours
     });
+
+    const activePrice = useSelector(state => state.activePrice)
+    const dispatch = useDispatch()
 
 
     useEffect(() => {
@@ -45,9 +49,9 @@ function Body({ activePrice }) {
                 setData(newData);
             })
             .catch(err => {
-                setErrorMessage(err.toString());
+                dispatch(setErrorMessage(err.toString()));
             });
-    }, [searchDate]);
+    }, [searchDate, dispatch]);
 
     
     const chartsChildren = (
@@ -76,12 +80,11 @@ function Body({ activePrice }) {
                 <Button className="text-white" variant="warning" onClick={() => setShowForm(true)}>Määra kuupäevad</Button>
             </div>
             <DateForm
-                setErrorMessage={setErrorMessage}
                 show={showForm}
                 setShow={setShowForm}
                 setSearchDate={setSearchDate}
             />
-            <ErrorModal errorMessage={errorMessage} handleClose={() => setErrorMessage(null)} />
+            <ErrorModal  />
         </>
     )
 }

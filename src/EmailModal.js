@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
-function ErrorModal({ showForm, handleClose }) {
+function EmailModal({ showForm, handleClose }) {
     return (
         <Modal show={showForm} onHide={handleClose} centered>
             <Modal.Header closeButton>
@@ -34,4 +34,4 @@ function ErrorModal({ showForm, handleClose }) {
     )
 }
 
-export default ErrorModal;
+export default EmailModal;

@@ -3,23 +3,28 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/esm/Button';
 import moment from 'moment';
+import { setErrorMessage } from '../services/stateService';
+import { useDispatch } from 'react-redux';
 
-function DateForm({ show, setShow, setSearchDate, setErrorMessage }) {
+function DateForm({ show, setShow, setSearchDate}) {
 
     const handleClose = () => setShow(false);
+
+    const dispatch = useDispatch()
+
     const handleSubmit = (event) => {
         event.preventDefault();
         let start = event.target.start.value;
         let end = event.target.end.value;
 
         if (moment().diff(start) < 0 || moment().diff(end) > 0 || start === '' || end === '') {
-            setErrorMessage(`'Alguskuupäev' peab olema minevikus ja 'Lõppkuupäev' peab olema tulevikus`);
+            dispatch(setErrorMessage(`'Alguskuupäev' peab olema minevikus ja 'Lõppkuupäev' peab olema tulevikus`))
             return false;
         }
         
         let oneDay = 86400000; //milliseconds in one day
         if (moment(end).diff(start) <= oneDay) {
-            setErrorMessage(`'Alguskuupäeva' ja 'Lõppkuupäeva' vahe peab olema vähemalt 1 päev`);
+            dispatch(setErrorMessage(`'Alguskuupäeva' ja 'Lõppkuupäeva' vahe peab olema vähemalt 1 päev`))
             return false;
         }
         

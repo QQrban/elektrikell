@@ -1,28 +1,23 @@
 import { useEffect, useState } from "react";
-import { currentPrice } from "../services/apiService";
-import { getCurrentPrice } from "../services/apiService";
+import { useSelector } from "react-redux";
 
 function HindHetkel() {
-    const [data, setData] = useState(0);
     const [text, setText] = useState('')
+    const currentPrice = useSelector(state => state.currentPrice)
 
     useEffect(() => {
-        currentPrice(getCurrentPrice, setData);
-        if (data) {
-            if (data >= 15) {
+            if (currentPrice >= 15) {
                 setText('kõrge');
-            } else if (data >= 10) {
+            } else if (currentPrice >= 10) {
                 setText('keskmine');
             } else {
                 setText('madal');
             }
-
-        }
-    }, [data])
+    }, [currentPrice])
 
     return (
         <div className="d-flex align-center">
-            <span style={(data >= 10) ?
+            <span style={(currentPrice >= 10) ?
                 { backgroundColor: 'rgba(252, 226, 228, 0.75)', color: 'red' }
                 :
                 { backgroundColor: 'rgb(209,231,221)', color: 'darkgreen' }}

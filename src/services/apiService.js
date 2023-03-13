@@ -15,17 +15,3 @@ export async function getCurrentPrice() {
     const response = await fetch(`${apiUrl}/nps/price/${country}/current`);
     return response.json();
 }
-
-export const currentPrice = (func, setData, setErrorMessage) => {
-    func()
-        .then(({ success, data, messages }) => {
-            if (!success) {
-                throw new Error(messages[0])
-            }
-            setData(+((data[0].price) / 10 * 1.2).toFixed(2))
-        })
-        .catch(err => {
-            setErrorMessage(err.toString());
-        })
-}
-// currentPrice(getCurrentPrice, setData, setErrorMessage)
