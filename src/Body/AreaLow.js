@@ -18,6 +18,9 @@ const AreaLow = ({ searchDate, data, children }) => {
 
     useEffect(() => {
         document.querySelector('body').classList.remove('high');
+        document.querySelector('.navbar').classList.remove('high');
+        document.querySelector('.navbar').classList.add('low');
+
         if (!data) return;
 
         const rangePrices = rangePricesGenerator(data, selectedTime);

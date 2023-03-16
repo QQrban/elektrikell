@@ -8,8 +8,8 @@ import {
     ReferenceLine
 } from 'recharts';
 import {  useSelector, useDispatch } from 'react-redux';
-import moment from 'moment';
 import Button from 'react-bootstrap/esm/Button';
+import moment from 'moment';
 import { getPriceData } from '../services/apiService';
 import { setErrorMessage } from '../services/stateService';
 import ErrorModal from '../ErrorModal';
@@ -48,6 +48,7 @@ function Body() {
                     }
                 });
                 setData(newData);
+                
             })
             .catch(err => {
                 dispatch(setErrorMessage(err.toString()));

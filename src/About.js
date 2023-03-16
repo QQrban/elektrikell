@@ -7,6 +7,8 @@ import EmailModal from './EmailModal'
 const About = () => {
     const [showForm, setShowForm] = useState(false);
 
+    
+
     return (
         <div className="d-flex about">
             <Container className="align-self-center text-white gap-4 pt-3 text-center w-100 d-flex flex-column align-items-center">

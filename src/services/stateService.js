@@ -1,5 +1,10 @@
 import { configureStore, createAction, createReducer } from '@reduxjs/toolkit';
 
+// Redux - это обработчик состояния для разных библиотек.
+// Основы Redux очень схожи с React состоянием
+// Как и у реакт состояния, так и у Redux есть изначальное состояние и функция, меняющая состояние
+// Изначальное состояние - объект, в котором хранятся различные свойства/состояния
+
 const initialState = {
     hourRange: 1,
     lowPriceTimestamp: null,
@@ -8,12 +13,17 @@ const initialState = {
     currentPrice: null,
 };
 
+// Функции изменения состояния называются в Redux 'Action'
+// Action создает объект, в котором есть его тип и объект payload, в котором будет находится новое состояние.
 export const setHourRange = createAction('setHourRange');
 export const setLowPriceTimestamp = createAction('setLowPriceTimestamp');
 export const setActivePrice = createAction('setActivePrice');
 export const setErrorMessage = createAction('setErrorMessage');
 export const setCurrentPrice = createAction('setCurrentPrice');
 
+
+// reducer используется для определения, что будет делать Action при его инициализации
+// Мы создаем функции с названием action, в которых меняем состояние
 const reducer = createReducer(initialState, {
     [setHourRange]: (state, action) => {
         state.hourRange = action.payload;
@@ -32,4 +42,6 @@ const reducer = createReducer(initialState, {
     }
 });
 
+
+//store - облако, в котором хранится вся информация по redux состоянию
 export const store = configureStore({reducer});
