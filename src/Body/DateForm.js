@@ -7,10 +7,11 @@ import moment from 'moment';
 import { setErrorMessage } from '../services/stateService';
 
 function DateForm({ show, setShow, setSearchDate}) {
-
+    
+    const dispatch = useDispatch()
+    
     const handleClose = () => setShow(false);
 
-    const dispatch = useDispatch()
 
     const handleSubmit = (event) => {
         event.preventDefault();

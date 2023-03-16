@@ -26,7 +26,7 @@ function EmailModal({ showForm, handleClose }) {
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button className='w-25' variant="success" onClick={handleClose}>
+                <Button className="w-25" variant="success" onClick={handleClose}>
                     Send
                 </Button>
             </Modal.Footer>

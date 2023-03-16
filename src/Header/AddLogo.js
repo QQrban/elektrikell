@@ -3,7 +3,7 @@ import { GiGreenPower } from 'react-icons/gi'
 function AddLogo() {
     return (
         <>
-            <GiGreenPower className='logo'/>
+            <GiGreenPower className="logo"/>
         </>
     )
 }

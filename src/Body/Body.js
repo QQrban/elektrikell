@@ -78,7 +78,12 @@ function Body() {
                 </AreaLow>
             }
             <div className="text-center">
-                <Button className="text-white" variant="warning" onClick={() => setShowForm(true)}>Määra kuupäevad</Button>
+                <Button 
+                    className="text-white" 
+                    variant="warning" 
+                    onClick={() => setShowForm(true)}
+                >Määra kuupäevad
+                </Button>
             </div>
             <DateForm
                 show={showForm}

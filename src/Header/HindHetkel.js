@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 function HindHetkel() {
     const [text, setText] = useState('')
+    
     const currentPrice = useSelector(state => state.currentPrice)
 
     useEffect(() => {

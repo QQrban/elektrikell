@@ -1,8 +1,8 @@
 import Container from 'react-bootstrap/Container';
-import Durations from './Durations';
+import { useSelector } from 'react-redux';
 import Countdown from 'react-countdown';
 import moment from 'moment';
-import { useSelector } from 'react-redux';
+import Durations from './Durations';
 
 function FooterLowPrice() {
 
@@ -14,15 +14,15 @@ function FooterLowPrice() {
 
     return (
         <Container className="text-center mt-3 fw-light">
-            <div className='fs-2 mb-1'>Tahan tarbida</div>
-            <div className='mb-2'>
+            <div className="fs-2 mb-1">Tahan tarbida</div>
+            <div className="mb-2">
                 <Durations />
             </div>
-            <div className='mb-1 fs-5'>Parim aeg selleks on <span className='fw-normal'>{timeFrom}st {timeTo}ni </span>milleni on jäänud</div>
-            <div className='mb-1 fs-1 fw-bold'>
+            <div className="mb-1 fs-5">Parim aeg selleks on <span className="fw-normal">{timeFrom}st {timeTo}ni </span>milleni on jäänud</div>
+            <div className="mb-1 fs-1 fw-bold">
                 {lowPriceTimestamp && <Countdown date={lowPriceTimestamp * 1000} />}
             </div>
-            <div className='fs-5'><a href="https://mkm.ee/energeetika-ja-maavarad/energiatohusus/saastlik-energiatarbimine">Loe lähemalt säästliku energiatarbimist</a></div>
+            <div className="fs-5"><a href="https://mkm.ee/energeetika-ja-maavarad/energiatohusus/saastlik-energiatarbimine">Loe lähemalt säästliku energiatarbimist</a></div>
         </Container>
     );
 }

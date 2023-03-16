@@ -1,5 +1,5 @@
-import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { ReferenceArea } from 'recharts';
 import { ResponsiveContainer, LineChart } from 'recharts';
@@ -7,15 +7,13 @@ import { rangePricesGenerator } from '../helpers/rangePrices';
 import { setLowPriceTimestamp } from '../services/stateService';
 
 const AreaLow = ({ searchDate, data, children }) => {
+    const [x, setX] = useState(null);
     
     const { hour: durationParam } = useParams();
 
-    const [x, setX] = useState(null);
-
-    
-
     const hourRange = useSelector((state) => state.hourRange);
     const dispatch = useDispatch();
+
     const selectedTime = durationParam ? +durationParam : hourRange;
 
     useEffect(() => {

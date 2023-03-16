@@ -19,19 +19,19 @@ function Durations() {
 	const handleClick = (duration) => {
 		if(durationParam) {
 			navigate('/');
-			// navigate(`/low/${time}`);
+			// navigate(`/low/${time}`)"
 		} 	
 		dispatch(setHourRange(duration))
 	}
 
 	return (
-		<ButtonToolbar className='justify-content-center' aria-label="Toolbar with button groups">
+		<ButtonToolbar className="justify-content-center" aria-label="Toolbar with button groups">
 			<ButtonGroup style={{ padding: '10px', boxShadow: '1px 1px 5px gray', backgroundColor: 'rgb(255,255,255, 0.8)' }} className="me-2" aria-label="First group">
 				{durations.map(duration => {
 					const selectedDuration = durationParam ? +durationParam : hourRange
 					return (
 						<Button
-							variant='outline-success'
+							variant="outline-success"
 							key={duration}
 							active={duration === selectedDuration}
 							onClick={() => handleClick(duration)}>

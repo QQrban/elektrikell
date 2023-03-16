@@ -11,10 +11,10 @@ const App = () => {
     <>
       <NavBar />
       <Routes>
-        <Route path='/' element={<Elektrikell />} />
-        <Route path='/:activePrice' element={<Elektrikell />} />
-        <Route path='/low/:hour' element={<Elektrikell />} />
-        <Route path='/about' element={<About />} />
+        <Route path="/" element={<Elektrikell />} />
+        <Route path="/:activePrice" element={<Elektrikell />} />
+        <Route path="/low/:hour" element={<Elektrikell />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </>
   )
