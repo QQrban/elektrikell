@@ -8,6 +8,7 @@ const AreaHigh = ({ data, children }) => {
     
     useEffect(() => {
         document.querySelector('body').classList.add('high');
+        document.querySelector('.navbar').classList.add('high');
 
         if (!data) return;
 
