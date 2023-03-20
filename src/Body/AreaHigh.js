@@ -4,7 +4,7 @@ import { rangePricesGenerator } from '../helpers/rangePrices';
 
 const AreaHigh = ({ data, children }) => {
     const [xHigh, setXHigh] = useState(null);
-    const currentIndex = data?.findIndex(e => e.current)
+    const currentIndex = data?.findIndex(e => e.current);
     
     useEffect(() => {
         document.querySelector('body').classList.add('high');
@@ -12,7 +12,7 @@ const AreaHigh = ({ data, children }) => {
 
         if (!data) return;
 
-        const rangePrices = rangePricesGenerator(data)
+        const rangePrices = rangePricesGenerator(data);
         rangePrices.reverse();
 
         let sum = 0;       

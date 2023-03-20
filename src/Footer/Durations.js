@@ -13,7 +13,6 @@ function Durations() {
 	const hourRange = useSelector((state) => state.hourRange);
 	const dispatch = useDispatch();
 
-
 	const durations = [1, 2, 3, 4, 6, 8];
 
 	const handleClick = (duration) => {

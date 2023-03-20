@@ -1,9 +1,9 @@
 import React from 'react';
+import moment from 'moment';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/esm/Button';
 import { useDispatch } from 'react-redux';
-import moment from 'moment';
 import { setErrorMessage } from '../services/stateService';
 
 function DateForm({ show, setShow, setSearchDate}) {
