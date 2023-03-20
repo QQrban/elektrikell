@@ -1,70 +1,64 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+#  **Try out this React project**
 
-### `npm start`
+- Clone the repository using Git, open a terminal or command prompt and navigate to the directory where you want to store the project. Then, run the command `git clone https://github.com/QQrban/elektrikell`.
+- Once you have the project on your local machine, navigate to the project directory using a terminal or command prompt.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    Run the command `npm install` to install all of the project's dependencies.
+- After the dependencies have been installed, run the command `npm start` to start the development server.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<span style="color:green">Some blue text</span>.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Introduction to the application
 
-### `npm run build`
+Using the API from the [elering.ee](https://dashboard.elering.ee/assets/api-doc.html) website, this application displays the current electricity price in real-time. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This website is an analogue of the Estonian website [elektrikell.ee](https://elektrikell.ee), created by a student of the "Frontend developer intensive course for beginners based on React.js" by Gamma Intelligence OÜ company.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# How to use this application?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### On the main page, you can see the current time and electricity price displayed on a graph with a <span style="color:red">Red Line</span>. 
 
-### `npm run eject`
+<br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### In the top left corner, you can see an approximate estimation of the current electricity price
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ <p align="center">
+  <img src="./src/readMe-imgs/hetkel.png" />
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### This feature has three options: <span style="color:red">kõrge</span> if the electricity price is equal to or above 15 cents, <span style="color:pink">keskmine</span> if the price is equal to or above 10 cents, and <span style="color:green">madal</span> if the price is below 10 cents.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<hr/>
+<br/>
 
-## Learn More
+### Between these two buttons &nbsp; ![img](./src/readMe-imgs/buttons.png) &nbsp; located at the top of the page, you can choose which data you want to view. The <span style="color:green">Odavad Tunnid</span> button shows the cheapest hours for energy consumption, which are marked with green columns. The <span style="color:red">Tiputunnid</span> button shows the most expensive hours for energy consumption, which are marked with red columns.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<hr/>
+<br/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### These numbers &nbsp; ![img](./src/readMe-imgs/hind.png) &nbsp; display the price of electricity in **cents(€) per kilowatt-hour** in real-time. Typically, the price is significantly lower at night than during the day. The highest price is observed in the mornings (7:00-10:00) and evenings (19:00-21:00).
 
-### Code Splitting
+<hr/>
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### At the bottom of the website, there are buttons &nbsp; ![img](./src/readMe-imgs/durations.png) &nbsp;  that allow you to see the hours with the cheapest electricity if you consume it for 2, 3, 4, 6, or 8 hours. Just **click** on them and you will see how the graph changes accordingly.
+<hr/>
+<br/>
 
-### Analyzing the Bundle Size
+#### The row below &nbsp; ![img](./src/readMe-imgs/aeg.png) &nbsp; shows the hours during which the cheapest electricity is available, and it changes when the button with the number of hours is clicked.
+<hr/>
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### In addition, there is also a timer &nbsp; ![img](./src/readMe-imgs/timer.png) &nbsp; that shows the remaining hours until the cheap energy mark.
 
-### Making a Progressive Web App
+<br/>
+<hr/>
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Additional information:
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### The application was built using React and various libraries. `Moment` is used for working with dates and `Bootstrap` for the UI. The chart is created using `Recharts`. Navigation on the site is made using `React-Router-Dom`. The application also utilizes `React-Redux` for managing data state and the user interface.
