@@ -17,15 +17,15 @@ function NavBar() {
     }
 
     return (
-        <div  style={{ backgroundColor: 'rgb(209,231,221)', zIndex: '5' }}>
+        <div style={{ backgroundColor: 'rgb(209,231,221)', zIndex: '5' }}>
             <Navbar expand="lg" className="mb-2 ">
                 <Container className=''>
                     <Navbar.Brand >
                         <AddLogo />Elektrikell
                     </Navbar.Brand>
-                    <Nav className="d-flex gap-5 align-items-center">
+                    <Nav className="nav-links d-flex gap-5 align-items-center">
                         <Link onClick={dispatch(setActivePrice('low'))} style={{ textDecoration: 'none', color: 'green' }} to="/elektrikell">Home</Link>
-                        <Link to="/elektrikell/about"> <Button onClick={() => handleClick()}  variant="outline-success" className="text-success"> About </Button></Link>
+                        <Link to="/elektrikell/about"> <Button onClick={() => handleClick()} variant="outline-success" className="text-success"> About </Button></Link>
                     </Nav>
 
                     {/* <Link style={{ textDecoration: 'none', color: 'green' }} to="/high"><span>Tipptund</span></Link> */}
