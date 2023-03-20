@@ -25,33 +25,34 @@ This website is an analogue of the Estonian website [elektrikell.ee](https://ele
 ### In the top left corner, you can see an approximate estimation of the current electricity price
 
  <p align="center">
-  <img src="./src/readMe-imgs/hetkel.png" />
+  <img src="https://i.ibb.co/r7vFbwY/hetkel.png" />
 </p>
+
 
 ### This feature has three options: <span style="color:red">kõrge</span> if the electricity price is equal to or above 15 cents, <font color="red">keskmine</font> if the price is equal to or above 10 cents, and <span style="color:green">madal</span> if the price is below 10 cents.
 
 <hr/>
 <br/>
 
-#### Between these two buttons &nbsp; ![img](./src/readMe-imgs/buttons.png) &nbsp; located at the top of the page, you can choose which data you want to view. The <span style="color:green">Odavad Tunnid</span> button shows the cheapest hours for energy consumption, which are marked with green columns. The <span style="color:red">Tiputunnid</span> button shows the most expensive hours for energy consumption, which are marked with red columns.
+#### Between these two buttons &nbsp; ![img](https://i.ibb.co/QYw8mLv/buttons.png) &nbsp; located at the top of the page, you can choose which data you want to view. The <span style="color:green">Odavad Tunnid</span> button shows the cheapest hours for energy consumption, which are marked with green columns. The <span style="color:red">Tiputunnid</span> button shows the most expensive hours for energy consumption, which are marked with red columns.
 
 <hr/>
 <br/>
 
-#### These numbers &nbsp; ![img](./src/readMe-imgs/hind.png) &nbsp; display the price of electricity in **cents(€) per kilowatt-hour** in real-time. Typically, the price is significantly lower at night than during the day. The highest price is observed in the mornings <span style="color:red">(7:00-10:00)</span> and evenings <span style="color:red">(19:00-21:00)</span>.
+#### These numbers &nbsp; ![img](https://i.ibb.co/7JFTSyT/hind.png) &nbsp; display the price of electricity in **cents(€) per kilowatt-hour** in real-time. Typically, the price is significantly lower at night than during the day. The highest price is observed in the mornings <span style="color:red">(7:00-10:00)</span> and evenings <span style="color:red">(19:00-21:00)</span>.
 
 <hr/>
 <br/>
 
-#### At the bottom of the website, there are buttons &nbsp; ![img](./src/readMe-imgs/durations.png) &nbsp;  that allow you to see the hours with the cheapest electricity if you consume it for <span style="color:green">2, 3, 4, 6 or 8 </span>hours. Just **click** on them and you will see how the graph changes accordingly.
+#### At the bottom of the website, there are buttons &nbsp; ![img](https://i.ibb.co/v3mw4Zg/durations.png) &nbsp;  that allow you to see the hours with the cheapest electricity if you consume it for <span style="color:green">2, 3, 4, 6 or 8 </span>hours. Just **click** on them and you will see how the graph changes accordingly.
 <hr/>
 <br/>
 
-#### The row below &nbsp; ![img](./src/readMe-imgs/aeg.png) &nbsp; shows the hours during which the cheapest electricity is available, and it changes when the button with the number of hours is clicked.
+#### The row below &nbsp; ![img](https://i.ibb.co/H2R7pNd/aeg.png) &nbsp; shows the hours during which the cheapest electricity is available, and it changes when the button with the number of hours is clicked.
 <hr/>
 <br/>
 
-#### In addition, there is also a timer &nbsp; ![img](./src/readMe-imgs/timer.png) &nbsp; that shows the remaining hours until the cheap energy mark.
+#### In addition, there is also a timer &nbsp; ![img](https://i.ibb.co/YyZPVdG/timer.png) &nbsp; that shows the remaining hours until the cheap energy mark.
 
 <br/>
 <hr/>
