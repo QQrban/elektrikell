@@ -10,8 +10,6 @@
 - After the dependencies have been installed, run the command `npm start` to start the development server.
 
 
-<span style="color:green">Some blue text</span>.
-
 # Introduction to the application
 
 Using the API from the [elering.ee](https://dashboard.elering.ee/assets/api-doc.html) website, this application displays the current electricity price in real-time. 
