@@ -28,7 +28,7 @@ This website is an analogue of the Estonian website [elektrikell.ee](https://ele
   <img src="./src/readMe-imgs/hetkel.png" />
 </p>
 
-### This feature has three options: <span style="color:red">kõrge</span> if the electricity price is equal to or above 15 cents, <span style="color:pink">keskmine</span> if the price is equal to or above 10 cents, and <span style="color:green">madal</span> if the price is below 10 cents.
+### This feature has three options: <span style="color:red">kõrge</span> if the electricity price is equal to or above 15 cents, <font color="red">keskmine</font> if the price is equal to or above 10 cents, and <span style="color:green">madal</span> if the price is below 10 cents.
 
 <hr/>
 <br/>
